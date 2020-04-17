@@ -43,24 +43,24 @@ Credits
 =======
 
 Characters and prototype textures by Kenney
-https://www.kenney.nl/assets/animated-characters
-https://www.kenney.nl/assets/prototype-textures
+- https://www.kenney.nl/assets/animated-characters
+- https://www.kenney.nl/assets/prototype-textures
 
 Uses Gonkee's joystick script for Godot 3
-https://youtu.be/uGyEP2LUFPg
+- https://youtu.be/uGyEP2LUFPg
 
 Touchscreen buttons by xelu
-https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
+- https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
 
 Sounds:
 
-https://sonniss.com/gameaudiogdc2017/
-https://freesound.org/people/monte32/sounds/353799/
-https://freesound.org/people/mickyman5000/sounds/340493/
+- https://sonniss.com/gameaudiogdc2017/
+- https://freesound.org/people/monte32/sounds/353799/
+- https://freesound.org/people/mickyman5000/sounds/340493/
 
 
 Thank you
 =========
 
 To support this kind of projects consider becoming a patron.
-https://www.patreon.com/ic3bug
+- https://www.patreon.com/ic3bug
