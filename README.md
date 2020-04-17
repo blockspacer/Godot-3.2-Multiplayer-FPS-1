@@ -31,13 +31,13 @@ Links
 =====
 
 High Level Multiplayer API
-https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html
+- https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html
 
 FPS Tutorial
-https://docs.godotengine.org/en/stable/tutorials/3d/fps_tutorial/part_one.html
+- https://docs.godotengine.org/en/stable/tutorials/3d/fps_tutorial/part_one.html
 
 Finite-State Machines: Theory and Implementation
-https://gamedevelopment.tutsplus.com/tutorials/finite-state-machines-theory-and-implementation--gamedev-11867
+- https://gamedevelopment.tutsplus.com/tutorials/finite-state-machines-theory-and-implementation--gamedev-11867
 
 Credits
 =======
