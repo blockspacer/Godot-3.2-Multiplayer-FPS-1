@@ -87,9 +87,10 @@ game="*res://scripts/game.gd"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
 window/size/resizable=false
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
@@ -155,10 +156,6 @@ wave={
 
 name_num_separator=2
 name_casing=2
-
-[physics]
-
-common/physics_fps=120
 
 [rendering]
 

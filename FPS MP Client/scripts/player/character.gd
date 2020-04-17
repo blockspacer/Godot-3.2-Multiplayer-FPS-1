@@ -24,6 +24,5 @@ func set_state(s : String, b : bool):
 # Because we don't want to see the player's mesh by default.
 # Only in ragdoll state.
 func set_visible_to_camera(b):
-	if has_node("mesh"):
-		$mesh.set_layer_mask_bit(0, b)
-		$mesh.set_layer_mask_bit(10, !b)
+	$skeleton/mesh.set_layer_mask_bit(0, b)
+	$skeleton/mesh.set_layer_mask_bit(10, !b)

@@ -4,7 +4,7 @@ class_name BasePlayer
 const MAX_HEALTH = 100
 var health setget set_health
 
-const FOOTSTEP_TIMEOUT_GROUND = 0.35
+const FOOTSTEP_TIMEOUT_GROUND = 0.45
 const FOOTSTEP_TIMEOUT_LADDER = 0.5
 
 var vars = {

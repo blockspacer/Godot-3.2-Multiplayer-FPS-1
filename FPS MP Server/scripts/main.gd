@@ -33,7 +33,7 @@ func _ready():
 	game.interest_points = get_node("world/map/interest_points").get_children()
 	
 	# Create bots
-	for b in 6:
+	for b in 3:
 		var bot = bot_scene.instance()
 		world.get_node("bots").add_child(bot)
 		bot.global_transform.origin = game.spawn_points[randi() % game.spawn_points.size()].global_transform.origin

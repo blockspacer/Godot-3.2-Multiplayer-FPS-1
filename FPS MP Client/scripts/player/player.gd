@@ -45,16 +45,16 @@ func _on_state_changed(s, _b):
 			holder.visible = !state[s]
 			if state[s]:
 				game.main_scene.display_message("You are dead! Respawning...")
-#				enable_ragdoll_collisions(true)
+				enable_ragdoll_collisions(true)
 				$character.set_visible_to_camera(true)
-#				$character/skeleton.physical_bones_start_simulation()
-#				$character/skeleton/physical_bone_hips.apply_central_impulse(last_impulse)
+				$character/skeleton.physical_bones_start_simulation()
+				$character/skeleton/pb_spine.apply_central_impulse(last_impulse)
 				$shape.disabled = true
 				aim_target = null
 			else:
-#				enable_ragdoll_collisions(false)
+				enable_ragdoll_collisions(false)
 				$character.set_visible_to_camera(false)
-#				$character/skeleton.physical_bones_stop_simulation()
+				$character/skeleton.physical_bones_stop_simulation()
 				$shape.disabled = false
 		"water":
 			if state[s] and !$sounds/water.playing:

@@ -68,8 +68,8 @@ var active_weapon_index : int = 0
 var weapons : Array = []
 
 # Animations
-#onready var anim_tree = get_node("character/animation_tree")
-#onready var anim_state_machine = anim_tree["parameters/state_machine/playback"]
+onready var anim_tree = get_node("character/animation_tree")
+onready var anim_state_machine = anim_tree["parameters/state_machine/playback"]
 
 # Last received impulse. Used for ragdolls.
 var last_impulse : Vector3
@@ -86,15 +86,15 @@ var score : int
 
 func _ready():
 	weapons = get_node("head/holder").get_children()
-#	anim_tree.active = true
+	anim_tree.active = true
 	send_timer.connect("timeout", self, "_on_send_timeout")
 	character.connect("char_state_changed", self, "_on_char_state_changed")
-#	enable_ragdoll_collisions(false)
+	enable_ragdoll_collisions(false)
 
 func _physics_process(delta):
 	process_commands(delta)
 	process_movement(delta)
-#	process_animations(delta)
+	process_animations(delta)
 	
 	check_pos_on_server()
 
@@ -249,8 +249,9 @@ func process_rotations(x : float, y : float):
 		can_send = false
 		send_timer.start()
 
-#func process_animations(delta):
-#	if state.undead:
+func process_animations(delta):
+	if state.undead:
+		pass
 #		if state.kicking:
 #			anim_state_machine.travel("zombie_attack_" + str(randi() % 6 + 1))
 #		elif state.agony:
@@ -258,26 +259,26 @@ func process_rotations(x : float, y : float):
 #		else:
 #			anim_state_machine.travel("zombie_loco")
 #		anim_tree["parameters/state_machine/zombie_loco/blend_position"] = lerp(anim_tree["parameters/state_machine/zombie_loco/blend_position"], input_movement_vector.y, delta * accel)
-#	elif state.water:
-#		anim_state_machine.travel("water_loco")
-#		anim_tree["parameters/state_machine/water_loco/blend_position"] = lerp(anim_tree["parameters/state_machine/water_loco/blend_position"], input_movement_vector.y, delta * accel)
-#	elif state.climbing:
-#		anim_state_machine.travel("climb_loco")
-#		anim_tree["parameters/state_machine/climb_loco/blend_position"] = lerp(anim_tree["parameters/state_machine/climb_loco/blend_position"], input_movement_vector.y, delta * accel)
-#	elif state.flying:
-#		anim_state_machine.travel("t_pose")
-#	elif !state.grounded:
-#		anim_state_machine.travel("rifle_jump_loop")
-#	else:
-#		if state.dancing:
-#			anim_state_machine.travel("dance")
-#		elif state.kicking:
-#			anim_state_machine.travel("kick")
-#		elif state.waving:
-#			anim_state_machine.travel("wave")
-#		else:
-#			anim_state_machine.travel("rifle_loco")
-#		anim_tree["parameters/state_machine/rifle_loco/blend_position"] = anim_tree["parameters/state_machine/rifle_loco/blend_position"].linear_interpolate(input_movement_vector, delta * accel)
+	elif state.water:
+		anim_state_machine.travel("swim")
+		anim_tree["parameters/state_machine/swim/blend_position"] = lerp(anim_tree["parameters/state_machine/swim/blend_position"], input_movement_vector.y, delta * accel)
+	elif state.climbing:
+		anim_state_machine.travel("climb")
+		anim_tree["parameters/state_machine/climb/blend_position"] = lerp(anim_tree["parameters/state_machine/climb/blend_position"], input_movement_vector.y, delta * accel)
+	elif state.flying:
+		anim_state_machine.travel("swim")
+	elif !state.grounded:
+		anim_state_machine.travel("jump")
+	else:
+		if state.dancing:
+			anim_state_machine.travel("dance")
+		elif state.kicking:
+			anim_state_machine.travel("kick")
+		elif state.waving:
+			anim_state_machine.travel("wave")
+		else:
+			anim_state_machine.travel("base")
+		anim_tree["parameters/state_machine/base/blend_position"] = anim_tree["parameters/state_machine/base/blend_position"].linear_interpolate(input_movement_vector, delta * accel)
 
 func _on_send_timeout():
 	can_send = true
@@ -287,7 +288,7 @@ func _on_char_state_changed(s, b):
 		rpc_id(1, "register_kick")
 		set_state("kicking", false)
 
-#func enable_ragdoll_collisions(b):
-#	for i in character.get_node("skeleton").get_children():
-#		if i is PhysicalBone:
-#			i.get_node("collision_shape").disabled = !b
+func enable_ragdoll_collisions(b):
+	for i in character.get_node("skeleton").get_children():
+		if i is PhysicalBone:
+			i.get_node("shape").disabled = !b

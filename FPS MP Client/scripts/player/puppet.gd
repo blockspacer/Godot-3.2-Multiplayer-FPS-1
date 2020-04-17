@@ -7,23 +7,21 @@ func _ready():
 	var _state_changed = connect("state_changed", self, "_on_state_changed")
 
 func _physics_process(_delta):
-	$head/holder.global_transform = $character/holder.global_transform
-#	anim_tree["parameters/aim_y/add_amount"] = head.rotation.x
+	$head/holder.global_transform = $character/skeleton/hand_r/holder.global_transform
+	anim_tree["parameters/aim_y/add_amount"] = head.rotation.x
 
 func _on_state_changed(s, _b):
 	match s:
 		"dead":
 			if state[s]:
-#				enable_ragdoll_collisions(true)
+				enable_ragdoll_collisions(true)
 				$shape.disabled = true
-				$character/mesh.visible = false
-#				$character/skeleton.physical_bones_start_simulation()
-#				$character/skeleton/physical_bone_spine.apply_central_impulse(last_impulse)
+				$character/skeleton.physical_bones_start_simulation()
+				$character/skeleton/pb_spine.apply_central_impulse(last_impulse)
 			else:
-#				enable_ragdoll_collisions(false)
+				enable_ragdoll_collisions(false)
 				$shape.disabled = false
-				$character/mesh.visible = true
-#				$character/skeleton.physical_bones_stop_simulation()
+				$character/skeleton.physical_bones_stop_simulation()
 
 func process_commands(_delta):
 	pass

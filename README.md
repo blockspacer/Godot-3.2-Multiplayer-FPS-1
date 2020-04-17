@@ -6,6 +6,7 @@ Features
 ========
 
 - Multiplayer with a basic network prediction: using Godot's High Level Multiplayer API
+- Character with animations for different states, like running, swimming and climbing
 - Bots: stack based FSM AI
 - 3 types of weapons: an automatic machine gun, a shotgun with spread, a grabbity gun
 - Sounds: footsteps, weapons, props, impacts, underwater effects
@@ -41,16 +42,20 @@ https://gamedevelopment.tutsplus.com/tutorials/finite-state-machines-theory-and-
 Credits
 =======
 
-Uses Gonkee's joystick script for Godot 3 https://youtu.be/uGyEP2LUFPg
+Characters and prototype textures by Kenney
+https://www.kenney.nl/assets/animated-characters
+https://www.kenney.nl/assets/prototype-textures
 
-Touchscreen buttons by xelu https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
+Uses Gonkee's joystick script for Godot 3
+https://youtu.be/uGyEP2LUFPg
+
+Touchscreen buttons by xelu
+https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
 
 Sounds:
 
 https://sonniss.com/gameaudiogdc2017/
-
 https://freesound.org/people/monte32/sounds/353799/
-
 https://freesound.org/people/mickyman5000/sounds/340493/
 
 
