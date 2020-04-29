@@ -5,7 +5,7 @@
 Features
 ========
 
-- Multiplayer with a basic network prediction: using Godot's High Level Multiplayer API
+- Multiplayer: using Godot's High Level Multiplayer API
 - Character with animations for different states, like running, swimming and climbing
 - Bots: stack based FSM AI
 - 3 types of weapons: an automatic machine gun, a shotgun with spread, a grabbity gun
